@@ -1,7 +1,11 @@
 // Write your JavaScript code here!
 window.addEventListener("load", function () {
+   let form = document.querySelector("form");
    fetch("https://handlers.education.launchcode.org/static/weather.json").then(function (response) {
+      console.log(response);
+
       response.json().then(function (json) {
+
          let target = document.getElementById("missionTarget");
 
          target.innerHTML =
@@ -18,20 +22,21 @@ window.addEventListener("load", function () {
       });
    });
 
-   let form = document.querySelector("form");
-   let list = document.getElementById("faultyItems");
+   //let form = document.querySelector("form");
+   //let list = document.getElementById("faultyItems");
 
-   list.style.visibility = "hidden"
-   list.style.backgroundcolor = color
+   //list.style.visibility = "hidden"
+   //list.style.backgroundcolor = color
 
    form.addEventListener("submit", function (event) {
-      event.preventDefault()
+      //event.preventDefault()
 
-      let pilotInput = document.querySelector("input[name=pilotName]").value;
-      let copilotName = document.querySelector("input[name=copilotName]").value;
-      let fuelLevel = document.querySelector("input[name=fuelLevel]").value;
-      let cargoMass = document.querySelector("input[name=cargoMass]").value;
+      let pilotInput = document.querySelector("input[name=pilotName]");
+      let copilotName = document.querySelector("input[name=copilotName]");
+      let fuelLevel = document.querySelector("input[name=fuelLevel]");
+      let cargoMass = document.querySelector("input[name=cargoMass]");
       let ready = true;
+      event.preventDefault()
 
       if (pilotInput === "" || copilotName === "" || fuelLevel === "" || cargoMass === "") {
 
@@ -75,8 +80,4 @@ window.addEventListener("load", function () {
 
 });
 
-
-
-
-
-
+});
